@@ -17,9 +17,6 @@
 Route::get('admin/login','LoginController@getLogin');
 Route::post('login_submit','LoginController@postLogin');
 
-
-
-Route::get('','HomeController@getIndex');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -45,5 +42,13 @@ Route::group(['prefix' => 'admin'],function(){
     });
 });
 
+Route::get('','HomeController@getIndex');
 
+Route::get('sanpham',['as'=>'sanpham','uses'=>'HomeController@sanpham']);
+Route::get('sanpham/{idsp?}','HomeController@getSanPham');
+
+Route::get('chi-tiet-san-pham/{idsp}',[
+    'as'=>'chitietsanpham',
+    'uses'=>'HomeController@getChitiet'
+]);
 

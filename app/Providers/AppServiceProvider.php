@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use App\danhmuc;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        view()->composer('pages.sanpham',function ($view){
+            $loai_sp = danhmuc::all();
+            $view->with('loai_sp',$loai_sp);
+        });
     }
 
     /**
