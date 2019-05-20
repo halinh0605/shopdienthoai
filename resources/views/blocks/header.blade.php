@@ -14,13 +14,19 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav ml-auto">
-                        <li class="nav-item active"><a class="nav-link" href="">Trang chủ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="sanpham">Sản phẩm</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="/home">Trang chủ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/sanpham">Sản phẩm</a></li>
                         <li class="nav-item"><a class="nav-link" href="/tintuc">Tin tức</a></li>
                         <li class="nav-item"><a class="nav-link" href="/lienhe">Liên hệ</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
+
+                        <li class="nav-item">
+                            <a href="{!! url('giohang') !!}" class="cart">
+                                <span id="abz" class="badge_number fa fa-shopping-cart" value="{!! Cart::instance('shopping')->count()? Cart::instance('shopping')->count(): '' !!}"></span>
+                            </a>
+                        </li>
+
                         <li class="nav-item">
                             <button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
                         </li>

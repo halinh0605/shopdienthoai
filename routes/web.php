@@ -14,12 +14,19 @@
 //Route::get('/index', function () {
 //    return view('welcome');
 //});
+
+Auth::routes([
+    'register' => false,
+    'verify' => true,
+    'reset' => false
+]);
+
 Route::get('admin/login','LoginController@getLogin');
 Route::post('login_submit','LoginController@postLogin');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
 
 Route::get('/dashboard', 'HomeController@dashboard');
 
@@ -38,17 +45,50 @@ Route::group(['prefix' => 'admin'],function(){
         Route::get('delete/{idsp}',['as'=>'admin.product.getDelete', 'uses'=>'ProductController@getDelete']);
         Route::get('edit/{idsp}',['as'=>'admin.product.getEdit', 'uses'=>'ProductController@getEdit']);
         Route::post('edit/{idsp}',['as'=>'admin.product.postEdit', 'uses'=>'ProductController@postEdit']);
-
+        Route::get('addAnh/{idsp}',['as'=>'admin.product.getAddAnh', 'uses'=>'ProductController@getAddAnh']);
+        Route::post('addAnh/{idsp}',['as'=>'admin.product.postAddAnh', 'uses'=>'ProductController@postAddAnh']);
     });
 });
 
-Route::get('','HomeController@getIndex');
+Route::get('/','HomeController@getIndex');
 
-Route::get('sanpham',['as'=>'sanpham','uses'=>'HomeController@sanpham']);
+Route::get('/sanpham',['as'=>'sanpham','uses'=>'HomeController@sanpham']);
 Route::get('sanpham/{idsp?}','HomeController@getSanPham');
 
-Route::get('chi-tiet-san-pham/{idsp}',[
+Route::get('chitietsanpham/{idsp}',[
     'as'=>'chitietsanpham',
     'uses'=>'HomeController@getChitiet'
 ]);
+
+Route::get('dathang',[
+    'as'=>'pages.dathang',
+    'uses'=>'HomeController@datHang'
+]);
+
+Route::get('giohang/{idsp}',[
+    'as'=>'giohang',
+    'uses'=>'HomeController@giohang'
+]);
+Route::get('giohang',[
+    'as'=>'giohang',
+    'uses'=>'HomeController@tranggiohang'
+]);
+Route::get('xoasanpham/{idsp}',[
+    'as' =>'xoasanpham',
+    'uses'=>'HomeController@xoasanpham'
+]);
+Route::post('capnhap-soluong-giohang',[
+    'as'=>'capnhap',
+    'uses'=>'HomeController@capnhap'
+]);
+Route::post('addDonhang',[
+    'as'=>'addDonhang',
+    'uses'=>'HomeController@postDonhang'
+]);
+Route::post('capnhap-iconGiohang',[
+    'as'=>'capnhapicon',
+    'uses'=>'HomeController@capnhapicon'
+]);
+
+
 

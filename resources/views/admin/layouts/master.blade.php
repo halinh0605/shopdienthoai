@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 
 <head>
@@ -11,6 +9,7 @@
 
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="{{url('Trumbowyg/dist/ui/trumbowyg.css')}}">
 
     <link rel="stylesheet" href="{{url('admin/giaodienAdmin/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('admin/giaodienAdmin/vendors/font-awesome/css/font-awesome.min.css')}}">
@@ -24,7 +23,6 @@
     <link rel="stylesheet" href="{{url('admin/giaodienAdmin/css/mycss.css')}}">
 
 
-
 </head>
 
 <body>
@@ -35,11 +33,14 @@
     <nav class="navbar navbar-expand-sm navbar-default">
 
         <div class="navbar-header">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="../admin"><img src="{{url('admin/giaodienAdmin/images/logo.png')}}" alt="Logo"></a>
-            <a class="navbar-brand hidden" href="../admin"><img src="{{url('admin/giaodienAdmin/images/logo2.png')}}" alt="Logo"></a>
+            <a class="navbar-brand" href="../admin"><img src="{{url('admin/giaodienAdmin/images/logo.png')}}"
+                                                         alt="Logo"></a>
+            <a class="navbar-brand hidden" href="../admin"><img src="{{url('admin/giaodienAdmin/images/logo2.png')}}"
+                                                                alt="Logo"></a>
         </div>
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -49,14 +50,16 @@
                 </li>
                 <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-coffee"></i>Quản lý danh mục</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false"> <i class="menu-icon fa fa-coffee"></i>Quản lý danh mục</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-puzzle-piece"></i><a href="/admin/cate/add">Thêm mới</a></li>
                         <li><i class="fa fa-id-badge"></i><a href="/admin/cate/list">Danh sách</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cutlery"></i>Quản lý sản phẩm</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false"> <i class="menu-icon fa fa-cutlery"></i>Quản lý sản phẩm</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-puzzle-piece"></i><a href="/admin/product/add">Thêm mới</a></li>
                         <li><i class="fa fa-id-badge"></i><a href="/admin/product/list">Danh sách</a></li>
@@ -86,13 +89,15 @@
                     <button class="search-trigger"><i class="fa fa-search"></i></button>
                     <div class="form-inline">
                         <form class="search-form">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search ..."
+                                   aria-label="Search">
                             <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
                         </form>
                     </div>
 
                     <div class="dropdown for-notification">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="notification"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-bell"></i>
                             <span class="count bg-danger">5</span>
                         </button>
@@ -123,7 +128,8 @@
                         <div class="dropdown-menu" aria-labelledby="message">
                             <p class="red">You have 4 Mails</p>
                             <a class="dropdown-item media bg-flat-color-1" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="{{url('admin/giaodienAdmin/images/avatar/1.jpg')}}"></span>
+                                <span class="photo media-left"><img alt="avatar"
+                                                                    src="{{url('admin/giaodienAdmin/images/avatar/1.jpg')}}"></span>
                                 <span class="message media-body">
                             <span class="name float-left">Jonathan Smith</span>
                             <span class="time float-right">Just now</span>
@@ -131,7 +137,8 @@
                         </span>
                             </a>
                             <a class="dropdown-item media bg-flat-color-4" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="{{url('admin/giaodienAdmin/images/avatar/2.jpg')}}"></span>
+                                <span class="photo media-left"><img alt="avatar"
+                                                                    src="{{url('admin/giaodienAdmin/images/avatar/2.jpg')}}"></span>
                                 <span class="message media-body">
                             <span class="name float-left">Jack Sanders</span>
                             <span class="time float-right">5 minutes ago</span>
@@ -139,7 +146,8 @@
                         </span>
                             </a>
                             <a class="dropdown-item media bg-flat-color-5" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="{{url('admin/giaodienAdmin/images/avatar/3.jpg')}}"></span>
+                                <span class="photo media-left"><img alt="avatar"
+                                                                    src="{{url('admin/giaodienAdmin/images/avatar/3.jpg')}}"></span>
                                 <span class="message media-body">
                             <span class="name float-left">Cheryl Wheeler</span>
                             <span class="time float-right">10 minutes ago</span>
@@ -147,7 +155,8 @@
                         </span>
                             </a>
                             <a class="dropdown-item media bg-flat-color-3" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="{{url('admin/giaodienAdmin/images/avatar/4.jpg')}}"></span>
+                                <span class="photo media-left"><img alt="avatar"
+                                                                    src="{{url('admin/giaodienAdmin/images/avatar/4.jpg')}}"></span>
                                 <span class="message media-body">
                             <span class="name float-left">Rachel Santos</span>
                             <span class="time float-right">15 minutes ago</span>
@@ -161,14 +170,17 @@
 
             <div class="col-sm-5">
                 <div class="user-area dropdown float-right">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="user-avatar rounded-circle" src="{{url('admin/giaodienAdmin/images/admin.jpg')}}" alt="User Avatar">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">
+                        <img class="user-avatar rounded-circle" src="{{url('admin/giaodienAdmin/images/admin.jpg')}}"
+                             alt="User Avatar">
                     </a>
 
                     <div class="user-menu dropdown-menu">
                         <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
 
-                        <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+                        <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span
+                                    class="count">13</span></a>
 
                         <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
@@ -177,7 +189,8 @@
                 </div>
 
                 <div class="language-select dropdown" id="language-select">
-                    <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="language" aria-haspopup="true"
+                       aria-expanded="true">
                         <i class="flag-icon flag-icon-us"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="language">
@@ -204,48 +217,46 @@
     <!-- Header-->
 
 
-
-
     {{------------Day la noi chua noi dung-----------}}
     <main>
-    @yield('content')
+        @yield('content')
 
     </main>
     {{------------ End Day la noi chua noi dung-------}}
 
 
+    <script src="{{url('admin/giaodienAdmin/vendors/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{url('admin/giaodienAdmin/vendors/popper.js/dist/umd/popper.min.js')}}"></script>
+    <script src="{{url('admin/giaodienAdmin/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{url('admin/giaodienAdmin/vendors/chart.js/dist/Chart.bundle.min.js')}}"></script>
+    <script src="{{url('admin/giaodienAdmin/assets/js/dashboard.js')}}"></script>
+    <script src="{{url('admin/giaodienAdmin/assets/js/widgets.js')}}"></script>
+    <script src="{{url('admin/giaodienAdmin/vendors/jqvmap/dist/jquery.vmap.min.js')}}"></script>
+    <script src="{{url('admin/giaodienAdmin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js')}}"></script>
+    <script src="{{url('admin/giaodienAdmin/vendors/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
+    <script src="{{url('admin/giaodienAdmin/assets/js/main.js')}}"></script>
 
+    <script>
+        (function ($) {
+            "use strict";
 
-<script src="{{url('admin/giaodienAdmin/vendors/jquery/dist/jquery.min.js')}}"></script>
-<script src="{{url('admin/giaodienAdmin/vendors/popper.js/dist/umd/popper.min.js')}}"></script>
-<script src="{{url('admin/giaodienAdmin/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-<script src="{{url('admin/giaodienAdmin/assets/js/main.js')}}"></script>
+            jQuery('#vmap').vectorMap({
+                map: 'world_en',
+                backgroundColor: null,
+                color: '#ffffff',
+                hoverOpacity: 0.7,
+                selectedColor: '#1de9b6',
+                enableZoom: true,
+                showTooltip: true,
+                values: sample_data,
+                scaleColors: ['#1de9b6', '#03a9f5'],
+                normalizeFunction: 'polynomial'
+            });
+        })(jQuery);
+    </script>
 
-
-<script src="{{url('admin/giaodienAdmin/vendors/chart.js/dist/Chart.bundle.min.js')}}"></script>
-<script src="{{url('admin/giaodienAdmin/assets/js/dashboard.js')}}"></script>
-<script src="{{url('admin/giaodienAdmin/assets/js/widgets.js')}}"></script>
-<script src="{{url('admin/giaodienAdmin/vendors/jqvmap/dist/jquery.vmap.min.js')}}"></script>
-<script src="{{url('admin/giaodienAdmin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js')}}"></script>
-<script src="{{url('admin/giaodienAdmin/vendors/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
-<script>
-    (function($) {
-        "use strict";
-
-        jQuery('#vmap').vectorMap({
-            map: 'world_en',
-            backgroundColor: null,
-            color: '#ffffff',
-            hoverOpacity: 0.7,
-            selectedColor: '#1de9b6',
-            enableZoom: true,
-            showTooltip: true,
-            values: sample_data,
-            scaleColors: ['#1de9b6', '#03a9f5'],
-            normalizeFunction: 'polynomial'
-        });
-    })(jQuery);
-</script>
+    <!-- Import Trumbowyg -->
+    <script src="{{url('Trumbowyg/dist/trumbowyg.js')}}"></script>
 
 </body>
 

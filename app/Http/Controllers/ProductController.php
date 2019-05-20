@@ -8,7 +8,8 @@ use App\Http\Requests\ProductRequest;
 use App\Http\Requests\ProductDetailRequest;
 use App\sanpham;
 use App\danhmuc;
-use App\chitietsanpham;
+//use App\chitietsanpham;
+use App\anhsanpham;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
@@ -16,7 +17,7 @@ class ProductController extends Controller
 {
     public function getList()
     {
-        $data = sanpham::select('idsp', 'tensp', 'hinhanh', 'soluong', 'gia', 'motangan', 'noidung', 'madm')->orderBy('idsp', 'DESC')->get()->toArray();
+        $data = sanpham::select('idsp', 'tensp', 'hinhanh', 'soluong', 'gia', 'madm')->orderBy('updated_at', 'DESC')->get()->toArray();
         return view('admin.product.list', compact('data'));
     }
 
@@ -41,6 +42,7 @@ class ProductController extends Controller
         $product->soluong = $request->number;
         $product->gia = $request->price;
         $product->noidung = $request->description;
+        $product->thongsokythuat = $request->thongso;
         $product->motangan = $request->mota;
         $product->madm = $request->cat_id;
         $product->save();
@@ -74,8 +76,32 @@ class ProductController extends Controller
         $product->soluong = $request->number;
         $product->gia = $request->price;
         $product->noidung = $request->description;
+        $product->thongsokythuat = $request->thongso;
+        $product->motangan = $request->mota;
         $product->madm = $request->cat_id;
         $product->save();
+        return redirect()->route('admin.product.list');
+    }
+
+    public function getAddAnh($idsp)
+    {
+        $product = sanpham::find($idsp);
+        return view('admin.product.addanh', compact( 'product'));
+    }
+    public function postAddAnh(Request $request,$idsp)
+    {
+        //luu anh
+        $image = $request->file('image');
+        $filename = 'upload/' . $image->getFilename() . time() . '.' . $image->getClientOriginalExtension();
+        Storage::disk('public')->put($filename, File::get($image));
+
+        $product = sanpham::find($idsp);
+        $product = new anhsanpham;
+
+        $product->idsp = $request->idsp;
+        $product->images = $filename;
+        $product->save();
+
         return redirect()->route('admin.product.list');
     }
 }

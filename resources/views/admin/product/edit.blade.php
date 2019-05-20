@@ -75,7 +75,23 @@
                                 <label for="hf-catName" class=" form-control-label">Nội dung</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <textarea name="description" id="description" cols="80" rows="5" >{!! old('price',isset($product) ? $product->noidung : '') !!}</textarea>
+                                <textarea class="noidung" name="description" id="description" cols="80" rows="5" >{!! old('price',isset($product) ? $product->noidung : '') !!}</textarea>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="hf-catName" class=" form-control-label">Mô tả ngắn</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <textarea class="noidung" name="mota" id="mota" cols="80" rows="5" >{!! old('price',isset($product) ? $product->motangan : '') !!}</textarea>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="hf-catName" class=" form-control-label">Thông số kỹ thuật</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <textarea  class="noidung" name="thongso" id="thongso" cols="80" rows="5" >{!! old('price',isset($product) ? $product->thongsokythuat : '') !!}</textarea>
                             </div>
                         </div>
                         <div class="row form-group">

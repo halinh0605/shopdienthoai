@@ -79,7 +79,7 @@
                             <label for="hf-catName" class=" form-control-label">Mô tả ngắn</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <textarea name="mota" id="mota" cols="80" rows="2"></textarea>
+                            <textarea class="noidung" name="mota" id="mota" cols="80" rows="2"></textarea>
                         </div>
                     </div>
                     <div class="row form-group">
@@ -87,7 +87,15 @@
                             <label for="hf-catName" class=" form-control-label">Nội dung</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <textarea name="description" id="description" cols="80" rows="6"></textarea>
+                            <textarea class="noidung" name="description" id="description" cols="80" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label for="hf-catName" class=" form-control-label">Thông số kỹ thuật</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <textarea  class="noidung" name="thongso" id="thongso" cols="80" rows="1"></textarea>
                         </div>
                     </div>
                     <div class="row form-group">

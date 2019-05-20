@@ -4,6 +4,8 @@
 <head>
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/fav.png">
     <!-- Author Meta -->
@@ -30,22 +32,23 @@
     <link rel="stylesheet" href="{!! url('karma/css/ion.rangeSlider.skinFlat.css') !!}" />
     <link rel="stylesheet" href="{!! url('karma/css/magnific-popup.css') !!}">
     <link rel="stylesheet" href="{!! url('karma/css/main.css') !!}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Make the image fully responsive */
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
 <!-- Start Header Area -->
     @include('blocks.header')
 <!-- End Header Area -->
-
-
-<!-- start banner Area -->
-    @include('blocks.slide')
-<!-- End banner Area -->
-
-
-<!-- start features Area -->
-    @include('blocks.features')
-<!-- end features Area -->
 
 
 <!-- start product Area -->
@@ -78,6 +81,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src="{!! url('karma/js/gmaps.min.js') !!}"></script>
 <script src="{!! url('karma/js/main.js') !!}"></script>
+<script src="{!! url('karma/js/myAjax.js') !!}"></script>
 </body>
 
 </html>

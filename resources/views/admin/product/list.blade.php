@@ -10,8 +10,8 @@
                 <th>Số lượng</th>
                 <th>Gía (VNĐ)</th>
                 <th>Danh mục</th>
-                <th>Delete</th>
-                <th>Edit</th>
+                <th>Hành động</th>
+                <th>Thêm ảnh</th>
             </tr>
             @foreach($data as $item)
             <tr>
@@ -25,8 +25,8 @@
                         {!! $cat->tendm !!}
                         @endif
                 </td>
-                <td><i class="fa fa-trash-o fa-fw"><a href="{!! URL::route('admin.product.getDelete',$item['idsp']) !!}" onclick="return xacnhanxoa('Do you want to delete?')"> Delete</td>
-                <td><i class="fa fa-pencil fa-fw"><a href="{!! url::route('admin.product.getEdit',$item["idsp"]) !!}"> Edit</td>
+                <td><a  class="fa fa-trash fa-fw" href="{!! URL::route('admin.product.getDelete',$item['idsp']) !!}" onclick="return xacnhanxoa('Do you want to delete?')"> <a class="fa fa-pencil fa-fw" href="{!! url::route('admin.product.getEdit',$item["idsp"]) !!}"> </td>
+                <td><a href="{!! url::route('admin.product.getAddAnh',$item["idsp"]) !!}"> Thêm ảnh</td>
             </tr>
             @endforeach
         </table>
