@@ -107,7 +107,7 @@ class HomeController extends Controller
         $id = $request->id;
         $qty = $request->qty;
         Cart::instance('shopping')->update($id, $qty);
-        return  Cart::subtotal(0, ',', '.');
+        return response()->json(['tongtien' =>  Cart::subtotal(0, ',', '.'), 'tongso' =>  Cart::count()]);
     }
 
     public function capnhapicon(Request $request)

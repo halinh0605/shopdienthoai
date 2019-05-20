@@ -53,8 +53,9 @@ function updateQty(rowid, value) {
         url: '/capnhap-soluong-giohang',
         data: {"id": rowid, "qty": newQty},
         success: function (data) {
-            $('#tongtien').text(data);
-            $('#abz').attr("value", newQty);
+            $('#tongtien').text(data.tongtien);
+
+            $('#abz').attr("value", data.tongso);
             // $('#abz').attr("value", data);
             // new là input thì set gia tri cho nó dùng .val().
             // con nếu là tẽxt ví du nhu thẻ <h> the span the label hoạc div thi dung .text().
@@ -74,7 +75,7 @@ function updateCart(idsp, value) {
         data: {"id": idsp,"qty": value},
         success: function (data) {
             // console.log(data);
-            // $('#abz').attr("value", data);
+            $('#abz').attr("value", data);
         },
         error: function (xhr, ajaxOptions, thrownError) {
             console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);

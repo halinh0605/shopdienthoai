@@ -23,36 +23,83 @@
 <div class="product_image_area">
     <div class="container">
         <div class="row s_product_inner">
-            <div class="col-lg-6">
-                <div id="demo" class="carousel slide" data-ride="carousel">
+            <div class="col-lg-7 ">
 
-                    <!-- Indicators -->
-                    <ul class="carousel-indicators">
-                        <li data-target="#demo" data-slide-to="0" class="active"></li>
-                        <li data-target="#demo" data-slide-to="1"></li>
-                        <li data-target="#demo" data-slide-to="2"></li>
-                    </ul>
+                {{--<div class="carousel slide" data-ride="carousel" id="article-photo-carousel">--}}
 
-                    <!-- The slideshow -->
-                    <div class="carousel-inner">
-                        @foreach($image as $item_image)
-                        <div class="carousel-item active">
-                            <img src="{{ asset($item_image->images) }}" alt="Los Angeles" width="1100" height="500">
+                    {{--<!-- Wrapper for slides -->--}}
+                    {{--<div class="carousel-inner cont-slider">--}}
+                        {{--@foreach($image as $item_image)--}}
+                            {{--@if ($loop->first)--}}
+                                {{--<div class="item active">--}}
+                                    {{--<img alt="" title="" src="{{ asset($item_image->images) }}">--}}
+                                {{--</div>--}}
+                            {{--@endif--}}
+                                {{--<div class="item">--}}
+                                    {{--<img alt="" title="" src="{{ asset($item_image->images) }}">--}}
+                                {{--</div>--}}
+                        {{--@endforeach--}}
+                    {{--</div>--}}
+                    {{--<!-- Indicators -->--}}
+                    {{--<ol class="carousel-indicators">--}}
+                        {{--@foreach($image as $item_image)--}}
+                            {{--@if ($loop->first)--}}
+                                {{--<li class="active"  data-target="#article-photo-carousel">--}}
+                                    {{--<img alt="" src="{{ asset($item_image->images) }}">--}}
+                                {{--</li>--}}
+                             {{--@endif--}}
+                                {{--<li class=""  data-target="#article-photo-carousel">--}}
+                                    {{--<img alt="" src="{{ asset($item_image->images) }}">--}}
+                                {{--</li>--}}
+                        {{--@endforeach--}}
+                    {{--</ol>--}}
+                {{--</div>--}}
+
+
+
+                    <div id="demo" class="carousel slide article-slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            @foreach($image as $item_image)
+                                {{--@if ($loop->first)--}}
+                                    {{--<li class="active"  data-target="#demo" data-slide-to="0">--}}
+                                        {{--<img alt="" src="{{ asset($item_image->images) }}">--}}
+                                    {{--</li>--}}
+                                {{--@endif--}}
+                                <li class=""  data-target="#demo" data-slide-to="{{$loop->index}}">
+                                    <img alt="" src="{{ asset($item_image->images) }}">
+                                </li>
+                            @endforeach
+                        </ol>
+
+                        <!-- The slideshow -->
+                        <div class="carousel-inner">
+                            @foreach($image as $item_image )
+                                @if ($loop->first)
+                                    <div class="carousel-item active">
+                                        <img src="{{ asset($item_image->images) }}" alt="" >
+                                    </div>
+                                @else
+                                    <div class="carousel-item " >
+                                        <img src="{{ asset($item_image->images) }}" alt="" >
+                                    </div>
+                                @endif
+                            @endforeach
+
+
                         </div>
-                        @endforeach
-                    </div>
 
-                    <!-- Left and right controls -->
-                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#demo" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-                </div>
+                        <!-- Left and right controls -->
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
             </div>
 
-            <div class="col-lg-5 offset-lg-1">
+            <div class="col-lg-5 ">
                 <div class="s_product_text">
                     <h3>{!! old('productName',isset($sanpham) ? $sanpham->tensp : '') !!}</h3>
                     <h2>{!! number_format(old('productName',isset($sanpham) ? $sanpham->gia : ''),0,",",".") !!} VNĐ</h2>
