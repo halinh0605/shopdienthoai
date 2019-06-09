@@ -12,13 +12,13 @@
 				<th>Hành động</th>
 
 			</tr>
-		@foreach($cat as $item)
+		@foreach($dm as $item)
 			<tr>
 				<td>{!! $item["madm"] !!}</td>
 				<td>{!! $item["tendm"] !!}</td>
 				<td>{!! $item["tukhoa"] !!}</td>
 				<td>{!! $item["mota"] !!}</td>
-				<td><a  class="fa fa-trash fa-fw" href="{!! URL::route('admin.product.getDelete',$item['idsp']) !!}" onclick="return xacnhanxoa('Do you want to delete?')"> <a class="fa fa-pencil fa-fw" href="{!! url::route('admin.product.getEdit',$item["idsp"]) !!}"> </td>
+				<td><a  class="fa fa-trash fa-fw" href="{!! URL('admin/cate/delete/'.$item["madm"]) !!}" onclick="return xacnhanxoa('Do you want to delete?')"> <a class="fa fa-pencil fa-fw" href="{!! url('admin/cate/edit'.$item["madm"]) !!}"> </td>
 			</tr>
 			@endforeach
 	</table>

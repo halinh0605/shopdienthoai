@@ -6,9 +6,8 @@ use DB;
 //use Gloudemans\Shoppingcart\Cart;
 use Illuminate\Http\Request;
 use App\sanpham;
-use App\khachhang;
-use App\hoadon;
-use App\chitiethoadon;
+use App\order;
+use App\order_detail;
 use App\anhsanpham;
 use Illuminate\Support\Facades\Input;
 use Cart;
@@ -32,10 +31,6 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-    public function dashboard()
-    {
-        return view('admin.home');
-    }
 
     public function index()
     {
@@ -47,6 +42,11 @@ class HomeController extends Controller
     {
         return $this->getSanPham(null);
 
+    }
+
+    public function lienhe()
+    {
+        return view('pages.lienhe');
     }
 
     public function getSanPham($madm)
@@ -78,7 +78,9 @@ class HomeController extends Controller
         $total = Cart::subtotal(0, ',', '.');
         return view('pages.giohang', compact('content', 'total'));
     }
-    public function tranggiohang(){
+
+    public function tranggiohang()
+    {
         $content = Cart::instance('shopping')->content();
         $total = Cart::subtotal(0, ',', '.');
         return view('pages.giohang', compact('content', 'total'));
@@ -102,12 +104,21 @@ class HomeController extends Controller
         return view('pages.dathang', compact('content', 'total'));
     }
 
+    public function muaHang($idsp)
+    {
+        $product_buy = sanpham::find($idsp);
+        Cart::instance('shopping')->add(['id' => $product_buy->idsp, 'name' => $product_buy->tensp, 'qty' => 1, 'price' => $product_buy->gia, 'weight' => 550, 'options' => ['image' => $product_buy->hinhanh]]);
+        $content = Cart::content();
+        return view('pages.dathang2', compact('content', 'idsp'));
+//return $content;
+    }
+
     public function capnhap(Request $request)
     {
         $id = $request->id;
         $qty = $request->qty;
         Cart::instance('shopping')->update($id, $qty);
-        return response()->json(['tongtien' =>  Cart::subtotal(0, ',', '.'), 'tongso' =>  Cart::count()]);
+        return response()->json(['tongtien' => Cart::subtotal(0, ',', '.'), 'tongso' => Cart::count()]);
     }
 
     public function capnhapicon(Request $request)
@@ -122,37 +133,39 @@ class HomeController extends Controller
 
     public function postDonhang(Request $request)
     {
-        $hoadon = new hoadon;
-        $khachhang = new khachhang;
-        $chitiethd = new chitiethoadon;
-
+        $hoadon = new order;
 
         $content = Cart::instance('shopping')->content();
-        $total = (int)Cart::instance('shopping')->subtotal(0,'','');
-        foreach ( $content as $item){
-            $chitiethd->tensp = $item->name;
-            $chitiethd->soluong =  $item->qty;
-            $chitiethd->gia = $item->price;
+        $total = (int)Cart::instance('shopping')->subtotal(0, '', '');
+
+        $hoadon->ten = $request->name;
+        $hoadon->diachi = $request->add1;
+        $hoadon->dienthoai = $request->number;
+        $hoadon->email = $request->email;
+        $hoadon->donhang = $total;
+        $hoadon->save();
+
+//        return redirect()->route('sanpham');
+
+        if (count($content) > 0) {
+            foreach ($content as $key => $item) {
+                $chitiethd = new order_detail;
+                $chitiethd->tensp = $item->name;
+                $chitiethd->soluong = $item->qty;
+                $chitiethd->gia = $item->price;
+                $chitiethd->tongtien = $item->price * $item->qty;
+                $chitiethd->mahd = $hoadon->mahd;
+
+
+                DB::table('sanpham')->where('masp', $item->masp)->decrement('soluong', $item->soluong);
+
+                $chitiethd->save();
+            }
         }
 
-//        $bcv->soluong = $request->soluong;
-//        $bcv->sanpham = $request->sp;
-//        $bcv->tongtien = $request->tongtien;
-        $khachhang->ten = $request->name;
-        $khachhang->diachi = $request->add1;
-        $khachhang->dienthoai = $request->number;
-        $khachhang->email = $request->email;
-
-        $hoadon->tongtien = $total;
-        $khachhang->save();
-        $hoadon->idkh=$khachhang->idkh;
-        $hoadon->save();
-        $chitiethd->mahd =$hoadon->mahd;
-        $chitiethd->save();
         Cart::instance('shopping')->destroy();
         return redirect()->route('sanpham');
 
     }
-
 
 }

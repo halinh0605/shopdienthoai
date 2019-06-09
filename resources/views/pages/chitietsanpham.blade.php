@@ -25,38 +25,6 @@
         <div class="row s_product_inner">
             <div class="col-lg-7 ">
 
-                {{--<div class="carousel slide" data-ride="carousel" id="article-photo-carousel">--}}
-
-                    {{--<!-- Wrapper for slides -->--}}
-                    {{--<div class="carousel-inner cont-slider">--}}
-                        {{--@foreach($image as $item_image)--}}
-                            {{--@if ($loop->first)--}}
-                                {{--<div class="item active">--}}
-                                    {{--<img alt="" title="" src="{{ asset($item_image->images) }}">--}}
-                                {{--</div>--}}
-                            {{--@endif--}}
-                                {{--<div class="item">--}}
-                                    {{--<img alt="" title="" src="{{ asset($item_image->images) }}">--}}
-                                {{--</div>--}}
-                        {{--@endforeach--}}
-                    {{--</div>--}}
-                    {{--<!-- Indicators -->--}}
-                    {{--<ol class="carousel-indicators">--}}
-                        {{--@foreach($image as $item_image)--}}
-                            {{--@if ($loop->first)--}}
-                                {{--<li class="active"  data-target="#article-photo-carousel">--}}
-                                    {{--<img alt="" src="{{ asset($item_image->images) }}">--}}
-                                {{--</li>--}}
-                             {{--@endif--}}
-                                {{--<li class=""  data-target="#article-photo-carousel">--}}
-                                    {{--<img alt="" src="{{ asset($item_image->images) }}">--}}
-                                {{--</li>--}}
-                        {{--@endforeach--}}
-                    {{--</ol>--}}
-                {{--</div>--}}
-
-
-
                     <div id="demo" class="carousel slide article-slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">

@@ -15,43 +15,19 @@
 //    return view('welcome');
 //});
 
-Auth::routes([
-    'register' => false,
-    'verify' => true,
-    'reset' => false
-]);
+//Auth::routes([
+//    'register' => false,
+//    'verify' => true,
+//    'reset' => false
+//]);
 
-Route::get('admin/login','LoginController@getLogin');
-Route::post('login_submit','LoginController@postLogin');
+//Route::get('admin/login','ProductController@getLogin');
+//Route::post('login_submit','LoginController@postLogin');
 
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index');
-
-Route::get('/dashboard', 'HomeController@dashboard');
-
-Route::group(['prefix' => 'admin'],function(){
-    Route::group(['prefix'=>'cate'],function(){
-        Route::get('list',['as'=>'admin.cate.list','uses'=>'CateController@getList']);
-        Route::get('add',['as'=>'admin.cate.getAdd', 'uses'=>'CateController@getAdd']);
-        Route::post('add',['as'=>'admin.cate.postAdd', 'uses'=>'CateController@postAdd']);
-    });
-});
-Route::group(['prefix' => 'admin'],function(){
-    Route::group(['prefix'=>'product'],function(){
-        Route::get('list',['as'=>'admin.product.list','uses'=>'ProductController@getList']);
-        Route::get('add',['as'=>'admin.product.getAdd', 'uses'=>'ProductController@getAdd']);
-        Route::post('add',['as'=>'admin.product.postAdd', 'uses'=>'ProductController@postAdd']);
-        Route::get('delete/{idsp}',['as'=>'admin.product.getDelete', 'uses'=>'ProductController@getDelete']);
-        Route::get('edit/{idsp}',['as'=>'admin.product.getEdit', 'uses'=>'ProductController@getEdit']);
-        Route::post('edit/{idsp}',['as'=>'admin.product.postEdit', 'uses'=>'ProductController@postEdit']);
-        Route::get('addAnh/{idsp}',['as'=>'admin.product.getAddAnh', 'uses'=>'ProductController@getAddAnh']);
-        Route::post('addAnh/{idsp}',['as'=>'admin.product.postAddAnh', 'uses'=>'ProductController@postAddAnh']);
-    });
-});
-
-Route::get('/','HomeController@getIndex');
-
+Route::get('/', 'HomeController@index');
 Route::get('/sanpham',['as'=>'sanpham','uses'=>'HomeController@sanpham']);
 Route::get('sanpham/{idsp?}','HomeController@getSanPham');
 
@@ -64,6 +40,11 @@ Route::get('dathang',[
     'as'=>'pages.dathang',
     'uses'=>'HomeController@datHang'
 ]);
+Route::get('dathang/{idsp}',[
+    'as'=>'pages.muahang',
+    'uses'=>'HomeController@muaHang'
+]);
+
 
 Route::get('giohang/{idsp}',[
     'as'=>'giohang',
@@ -89,6 +70,50 @@ Route::post('capnhap-iconGiohang',[
     'as'=>'capnhapicon',
     'uses'=>'HomeController@capnhapicon'
 ]);
+Route::get('/lienhe',['as'=>'lienhe','uses'=>'HomeController@lienhe']);
+
+Auth::routes();
+
+Route::group(['prefix' => 'admin'],function(){
+    Route::get('dashboard', 'ProductController@dashboard');
+    Route::group(['prefix'=>'cate'],function(){
+        Route::get('list',['as'=>'admin.cate.list','uses'=>'CateController@getList']);
+        Route::get('add',['as'=>'admin.cate.getAdd', 'uses'=>'CateController@getAdd']);
+        Route::post('add',['as'=>'admin.cate.postAdd', 'uses'=>'CateController@postAdd']);
+        Route::get('edit/{madm}',['as'=>'admin.cate.getEdit', 'uses'=>'CateController@getEdit']);
+        Route::post('edit/{madm}',['as'=>'admin.cate.postEdit', 'uses'=>'CateController@postEdit']);
+        Route::get('delete/{madm}',['as'=>'admin.cate.getDelete', 'uses'=>'CateController@getDelete']);
+    });
+
+    Route::group(['prefix'=>'product'],function(){
+        Route::get('list',['as'=>'admin.product.list','uses'=>'ProductController@getList']);
+        Route::get('add',['as'=>'admin.product.getAdd', 'uses'=>'ProductController@getAdd']);
+        Route::post('add',['as'=>'admin.product.postAdd', 'uses'=>'ProductController@postAdd']);
+        Route::get('delete/{idsp}',['as'=>'admin.product.getDelete', 'uses'=>'ProductController@getDelete']);
+        Route::get('edit/{idsp}',['as'=>'admin.product.getEdit', 'uses'=>'ProductController@getEdit']);
+        Route::post('edit/{idsp}',['as'=>'admin.product.postEdit', 'uses'=>'ProductController@postEdit']);
+        Route::get('addAnh/{idsp}',['as'=>'admin.product.getAddAnh', 'uses'=>'ProductController@getAddAnh']);
+        Route::post('addAnh/{idsp}',['as'=>'admin.product.postAddAnh', 'uses'=>'ProductController@postAddAnh']);
+    });
+
+    Route::group(['prefix'=>'order'],function(){
+        Route::get('listOrder',['as'=>'admin.order.listOrder','uses'=>'ProductController@listOrder']);
+        Route::get('listOrder_detail/{mahd}',['as'=>'admin.order.listOrder_detail', 'uses'=>'ProductController@listOrder_detail']);
+        Route::get('delete/{mahd}',['as'=>'admin.order.aaa', 'uses'=>'ProductController@DeleteOrder_detail']);
+        Route::post('updateStatusOrder/{mahd}',['as'=>'admin.order.update_status', 'uses'=>'ProductController@updateStatusOrder']);
+
+    });
+});
+//Route::group(['prefix' => 'admin'],function(){
+//
+//});
+//
+//Route::group(['prefix' => 'admin'],function(){
+//
+//});
+
+
+
 
 
 

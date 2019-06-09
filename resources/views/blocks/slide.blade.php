@@ -22,7 +22,7 @@
                     <div class="row single-slide align-items-center d-flex">
                         <div class="col-lg-12">
                             <div class="banner-img">
-                                <img class="img-fluid" src="karma/img/banner/Banner4.png" alt="">
+                                <img class="img-fluid" src="karma/img/banner/Banner3.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                     <div class="row single-slide align-items-center d-flex">
                         <div class="col-lg-12">
                             <div class="banner-img">
-                                <img class="img-fluid" src="karma/img/banner/Banner5.png" alt="">
+                                <img class="img-fluid" src="karma/img/banner/Banner4.png" alt="">
                             </div>
                         </div>
                     </div>

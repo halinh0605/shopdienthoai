@@ -5,7 +5,7 @@
 <div class="col-lg-10">
     <div class="card">
         <div class="card-header">
-            <strong>Thêm mới </strong> sản phẩm
+            <h1>Thêm mới sản phẩm</h1>
             <div class="card-body card-block">
 
                 @if(count($errors) > 0)

@@ -30,35 +30,43 @@
                             <h3>Thông tin mua hàng</h3>
                             <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="text" class="form-control abcd" id="name" name="name"  placeholder="Họ và tên *">
+                                    <input type="text" class="form-control abcd" id="name" name="name" placeholder="Họ và tên" required >
                                 </div>
 
                                 <div class="col-md-6 form-group p_star">
-                                    <input type="text" class="form-control" id="number" name="number" placeholder="Số điện thoại">
+                                    <input type="text" class="form-control" id="number" name="number" placeholder="Số điện thoại" required>
                                 </div>
                                 <div class="col-md-6 form-group p_star">
-                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="text" class="form-control" id="add1" name="add1" placeholder="Địa chỉ nhận hàng">
+                                    <input type="text" class="form-control" id="add1" name="add1" placeholder="Địa chỉ nhận hàng" required>
                                 </div>
 
                         </div>
                         <div class="col-lg-6">
                             <div class="order_box">
                                 <h2>Đơn hàng</h2>
-                                <ul class="list">
-                                    <li><a href="#" >Sản phẩm <span>Tổng</span></a></li>
-                                    @foreach($content as $item)
-                                    <li><a href="#" name="sp">{!! $item->name !!} <span class="middle" name="soluong">x {!! $item->qty !!}</span> <span class="last">{!! number_format($item->price * $item->qty ,0,",",".") !!}</span></a></li>
+                                <table class="list" style="width:100%">
+                                    <tr>
+                                        <th>Sản phẩm</th>
+                                        <th>Số lượng</th>
+                                        <th>Tổng tiền</th>
+                                    </tr>
+                                    @foreach($content as $sp)
+                                        <tr>
+                                            <td>{!! $sp->name !!}</td>
+                                            <td>{!! $sp->qty !!}</td>
+                                            <td >{!! number_format($sp->price * $sp->qty ,0,",",".") !!}  </td>
+                                        </tr>
                                     @endforeach
-                                </ul>
-                                <ul class="list list_2">
-                                    <li><a href="#" >Tổng Tiền  <span name="tongtien">{!! Cart::subtotal(0, ',', '.') !!}</span></a></li>
-                                </ul>
+                                </table>
+                                <div class="list list_2">
+                                    <li><a href="#" >Tổng cộng  <span name="tongtien">{!! Cart::subtotal(0, ',', '.') !!}</span></a></li>
+                                </div>
                                 <button type="submit" name="submit" class="primary-btn">Mua hàng</button>
                             </div>
-                         </div>
+                        </div>
                     </div>
             </form>
         </div>

@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Requests\CateRequest;
 use App\danhmuc;
 class CateController extends Controller
 {
@@ -23,4 +21,16 @@ class CateController extends Controller
        return redirect()->route('admin.cate.list');
 
     }
+    public function getEdit() {
+        return view('admin.cate.edit');
+    }
+    public function postEdit() {
+        return view('admin.cate.list');
+    }
+    public function getDelete($madm) {
+        $dm = danhmuc::find($madm);
+        $dm->delete();
+        return view('admin.cate.list',compact('dm'));
+    }
+
 }

@@ -74,7 +74,7 @@
 <script src="{!! url('karma/js/jquery.nice-select.min.js') !!}"></script>
 <script src="{!! url('karma/js/jquery.sticky.js') !!}"></script>
 <script src="{!! url('karma/js/nouislider.min.js') !!}"></script>
-<script src="{!! url('karma/js/countdown.js') !!}"></script>
+{{--<script src="{!! url('karma/js/countdown.js') !!}"></script>--}}
 <script src="{!! url('karma/js/jquery.magnific-popup.min.js') !!}"></script>
 <script src="{!! url('karma/js/owl.carousel.min.js') !!}"></script>
 <!--gmaps Js-->

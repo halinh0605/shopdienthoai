@@ -4,7 +4,7 @@
 <div class="col-lg-7">
     <div class="card">
         <div class="card-header">
-            <strong>Thêm mới </strong> danh mục
+            <h1>Thêm mới danh mục</h1>
         </div>
         <div class="card-body card-block">
             @if(count($errors) > 0)

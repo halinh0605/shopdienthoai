@@ -3,7 +3,7 @@
 
 <!-- start banner Area -->
 <section class="banner-area">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row align-items-center justify-content-start" >
             <div class="col-lg-12" style="margin-top: 120px">
                 <div class="active-banner-slider">
@@ -26,7 +26,7 @@
                     <div class="row single-slide align-items-center d-flex">
                         <div class="col-lg-12">
                             <div class="banner-img">
-                                <img class="img-fluid" src="karma/img/banner/Banner4.png" alt="">
+                                <img class="img-fluid" src="karma/img/banner/Banner3.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                     <div class="row single-slide align-items-center d-flex">
                         <div class="col-lg-12">
                             <div class="banner-img">
-                                <img class="img-fluid" src="karma/img/banner/Banner5.png" alt="">
+                                <img class="img-fluid" src="karma/img/banner/Banner4.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -106,9 +106,6 @@
                 <div class="col-lg-6 text-center">
                     <div class="section-title">
                         <h1>Sản phẩm bán chạy</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore
-                            magna aliqua.</p>
                     </div>
                 </div>
             </div>
@@ -119,7 +116,7 @@
                 @foreach($product as $item)
                     <div class="col-lg-3 col-md-6">
                         <div class="single-product">
-                            <img class="img-fluid" src="{!! $item->hinhanh !!}" alt="">
+                            <a href="/chitietsanpham/{!! $item->idsp !!}"><img class="img-fluid" src="{!! $item->hinhanh !!}" alt=""></a>
                             <div class="product-details">
                                 <h6>{!! $item->tensp !!}</h6>
                                 <div class="price">
@@ -130,19 +127,9 @@
 
                                     <a  href="javascript:updateCart('{!!$item->idsp!!}','1')" class="social-info">
                                         <span  class="fa fa-shopping-cart"></span>
-                                        <p class="hover-text">add to bag</p>
                                     </a>
-                                    <a href="" class="social-info">
-                                        <span class="lnr lnr-heart"></span>
-                                        <p class="hover-text">Wishlist</p>
-                                    </a>
-                                    <a href="" class="social-info">
-                                        <span class="lnr lnr-sync"></span>
-                                        <p class="hover-text">compare</p>
-                                    </a>
-                                    <a href="" class="social-info">
-                                        <span class="lnr lnr-move"></span>
-                                        <p class="hover-text">view more</p>
+                                    <a href="/chitietsanpham/{!! $item->idsp !!}" class="social-info">
+                                        <span class="">Mua</span>
                                     </a>
                                 </div>
                             </div>
@@ -161,9 +148,6 @@
                 <div class="col-lg-6 text-center">
                     <div class="section-title">
                         <h1>Sản phẩm mới</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore
-                            magna aliqua.</p>
                     </div>
                 </div>
             </div>
@@ -172,7 +156,7 @@
                 @foreach($product as $item)
                     <div class="col-lg-3 col-md-6">
                         <div class="single-product">
-                            <img class="img-fluid" src="{!! $item->hinhanh !!}" alt="">
+                            <a href="/chitietsanpham/{!! $item->idsp !!}"><img class="img-fluid"  src="{!! $item->hinhanh !!}" alt=""></a>
                             <div class="product-details">
                                 <h6>{!! $item->tensp !!}</h6>
                                 <div class="price">
@@ -183,20 +167,11 @@
 
                                     <a  href="javascript:updateCart('{!!$item->idsp!!}','1')" class="social-info">
                                         <span  class="fa fa-shopping-cart"></span>
-                                        <p class="hover-text">add to bag</p>
                                     </a>
-                                    <a href="" class="social-info">
-                                        <span class="lnr lnr-heart"></span>
-                                        <p class="hover-text">Wishlist</p>
+                                    <a href="/chitietsanpham/{!! $item->idsp !!}" class="social-info">
+                                        <span class="">Mua</span>
                                     </a>
-                                    <a href="" class="social-info">
-                                        <span class="lnr lnr-sync"></span>
-                                        <p class="hover-text">compare</p>
-                                    </a>
-                                    <a href="" class="social-info">
-                                        <span class="lnr lnr-move"></span>
-                                        <p class="hover-text">view more</p>
-                                    </a>
+
                                 </div>
                             </div>
                         </div>

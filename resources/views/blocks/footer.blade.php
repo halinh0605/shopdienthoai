@@ -1,19 +1,27 @@
 <footer class="footer-area section_gap">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3  col-md-6 col-sm-6">
+            <div class="col-lg-4  col-md-6 col-sm-6">
                 <div class="single-footer-widget">
-                    <h6>About Us</h6>
+                    <h6>Hệ thống cửa hàng</h6>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore
-                        magna aliqua.
+                        130 Thái Hà, Q.Đống Đa, Tp.Hà Nội<br>
+                        Điện thoại: 097.120.6688 - 0969.100.100
+                    </p>
+                    <p>
+                        300 Cầu Giấy, Q.Cầu Giấy, Tp.Hà Nội<br>
+                        Điện thoại: 097.180.2222 - 0966.120.120
+                    </p>
+                    <p>
+                        123 Trần Quang Khải, Q.1, Tp.Hồ Chí Minh<br>
+                        Điện thoại: 097.123.6969 - 0975.858.858
                     </p>
                 </div>
             </div>
-            <div class="col-lg-4  col-md-6 col-sm-6">
+            <div class="col-lg-3  col-md-6 col-sm-6">
                 <div class="single-footer-widget">
-                    <h6>Newsletter</h6>
-                    <p>Stay update with our latest</p>
+
+                    <h6>Đăng ký nhận bản tin</h6>
                     <div class="" id="mc_embed_signup">
 
                         <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
@@ -21,7 +29,7 @@
 
                             <div class="d-flex flex-row">
 
-                                <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
+                                <input class="form-control" name="EMAIL" placeholder="Nhập email của bạn" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nhập email của bạn" '"
                                        required="" type="email">
 
 
@@ -30,9 +38,7 @@
                                     <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
                                 </div>
 
-                                <!-- <div class="col-lg-4 col-md-4">
-                                            <button class="bb-btn btn"><span class="lnr lnr-arrow-right"></span></button>
-                                        </div>  -->
+
                             </div>
                             <div class="info"></div>
                         </form>
@@ -56,13 +62,12 @@
             </div>
             <div class="col-lg-2 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
-                    <h6>Follow Us</h6>
-                    <p>Let us be social</p>
+                    <h6>Liên kết</h6>
                     <div class="footer-social d-flex align-items-center">
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
+                        <a href="#"><i class="fa fa-youtube"></i></a>
+                        <a href="#"><i class="fa fa-google"></i></a>
                     </div>
                 </div>
             </div>
