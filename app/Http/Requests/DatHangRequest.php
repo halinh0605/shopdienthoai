@@ -26,7 +26,7 @@ class DatHangRequest extends FormRequest
         return [
             'name' => 'required',
             'diachi' => 'required'
-        ]
+        ];
     }
     public function messages()
     {
