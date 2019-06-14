@@ -6,47 +6,82 @@
     <div class="container-fluid">
         <div class="row align-items-center justify-content-start" >
             <div class="col-lg-12" style="margin: 121px 0px">
-                <div class="active-banner-slider">
-                    <!-- single-slide -->
-                    <div class="row single-slide align-items-center d-flex">
 
-                        <div class="col-lg-12" >
-                            <div class="banner-img" >
-                                <img class="img-fluid " src="karma/img/banner/Banner2.png"  alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single-slide -->
-                    <div class="row single-slide align-items-center d-flex">
+                <div id="demo" class="carousel slide article-slide-home" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ol>
 
-                        <div class="col-lg-12" >
-                            <div class="banner-img" >
-                                <img class="img-fluid " src="karma/img/banner/Banner1.png"  alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single-slide -->
-                    <div class="row single-slide align-items-center d-flex">
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        @foreach($image1 as $item_image )
+                            @if ($loop->first)
+                                <div class="carousel-item active">
+                                    <img src="{{ asset($item_image->image) }}" alt="" >
+                                </div>
+                            @else
+                                <div class="carousel-item " >
+                                    <img src="{{ asset($item_image->image) }}" alt="" >
+                                </div>
+                            @endif
+                        @endforeach
 
-                        <div class="col-lg-12" >
-                            <div class="banner-img" >
-                                <img class="img-fluid " src="karma/img/banner/Banner3.jpg"  alt="">
-                            </div>
-                        </div>
+
                     </div>
 
-                    <!-- single-slide -->
-                    <div class="row single-slide align-items-center d-flex">
-
-                        <div class="col-lg-12" >
-                            <div class="banner-img" >
-                                <img class="img-fluid " src="karma/img/banner/Banner4.jpg"  alt="">
-                            </div>
-                        </div>
-                    </div>
-
-
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
                 </div>
+
+                    {{--<div class="active-banner-slider">--}}
+                    {{--<!-- single-slide -->--}}
+                    {{--<div class="row single-slide align-items-center d-flex">--}}
+
+                        {{--<div class="col-lg-12" >--}}
+                            {{--<div class="banner-img" >--}}
+                                {{--<img class="img-fluid " src="karma/img/banner/Banner2.png"  alt="">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<!-- single-slide -->--}}
+                    {{--<div class="row single-slide align-items-center d-flex">--}}
+
+                        {{--<div class="col-lg-12" >--}}
+                            {{--<div class="banner-img" >--}}
+                                {{--<img class="img-fluid " src="karma/img/banner/Banner1.png"  alt="">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<!-- single-slide -->--}}
+                    {{--<div class="row single-slide align-items-center d-flex">--}}
+
+                        {{--<div class="col-lg-12" >--}}
+                            {{--<div class="banner-img" >--}}
+                                {{--<img class="img-fluid " src="karma/img/banner/Banner3.jpg"  alt="">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+
+                    {{--<!-- single-slide -->--}}
+                    {{--<div class="row single-slide align-items-center d-flex">--}}
+
+                        {{--<div class="col-lg-12" >--}}
+                            {{--<div class="banner-img" >--}}
+                                {{--<img class="img-fluid " src="karma/img/banner/Banner4.jpg"  alt="">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+
+
+                {{--</div>--}}
             </div>
         </div>
     </div>

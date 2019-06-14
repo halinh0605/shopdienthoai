@@ -5831,7 +5831,9 @@ label {
 .carousel {
   width: 600px;
 }
-
+.article-slide-home{
+  width: 100%;;
+}
 /* Indicators list style */
 .article-slide .carousel-indicators {
   bottom: 0;

@@ -48,9 +48,13 @@ Route::post('capnhap-iconGiohang',[
 Route::get('/lienhe',['as'=>'lienhe','uses'=>'HomeController@lienhe']);
 
 
+
 Auth::routes();
+
 Route::group(['prefix' => 'admin'],function(){
     Route::get('dashboard', 'ProductController@dashboard');
+    Route::get('AnhBanner','HomeController@getAnhBanner');
+    Route::post('AnhBanner','HomeController@postAnhBanner');
 
     Route::group(['prefix'=>'cate'],function(){
         Route::get('list',['as'=>'admin.cate.list','uses'=>'CateController@getList']);

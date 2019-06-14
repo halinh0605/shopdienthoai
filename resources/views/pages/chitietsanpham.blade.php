@@ -29,11 +29,6 @@
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
                             @foreach($image as $item_image)
-                                {{--@if ($loop->first)--}}
-                                    {{--<li class="active"  data-target="#demo" data-slide-to="0">--}}
-                                        {{--<img alt="" src="{{ asset($item_image->images) }}">--}}
-                                    {{--</li>--}}
-                                {{--@endif--}}
                                 <li class=""  data-target="#demo" data-slide-to="{{$loop->index}}">
                                     <img alt="" src="{{ asset($item_image->images) }}">
                                 </li>
@@ -81,12 +76,12 @@
                                 class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
                     </div>
                     <div class="card_area d-flex align-items-center">
-                        <a class="primary-btn" href="{!! URL('giohang',$sanpham->idsp) !!}">Thêm vào giỏ</a>
+                        {{--<a class="primary-btn" href="{!!    URL('giohang',$sanpham->idsp) !!}">Thêm vào giỏ</a>--}}
 
-                        <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
-                        <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
+                        {{--<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>--}}
+                        {{--<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>--}}
                     </div>
-                    <button type="button" class="btn btn-primary aa"><a  href="{!! URL('dathang',$sanpham->idsp) !!} ">MUA NGAY</a></button>
+                    <button type="button" class="btn btn-primary aa"><a  href="{!! URL('giohang',$sanpham->idsp) !!} ">MUA NGAY</a></button>
 
                 </div>
             </div>

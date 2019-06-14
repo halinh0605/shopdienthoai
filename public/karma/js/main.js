@@ -572,5 +572,5 @@ $(document).ready(function(){
  });
 // Stop carousel
 $('.carousel').carousel({
-    interval: false
+    interval: 1500
 });

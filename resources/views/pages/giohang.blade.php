@@ -67,7 +67,7 @@
 
                             </td>
                             <td>
-                                <h5 id="tongtien_{!! $item->rowId !!}">{!! number_format($item->price * $item->qty ,0,",",".") !!}</h5>
+                                <h5 id="tongtien_{!! $item->rowId !!}">{!! number_format($item->price * $item->qty ,0,",",".") !!} </h5>
                             </td>
                         </tr>
                         @endforeach
@@ -95,7 +95,7 @@
                             <h5>Tổng tiền </h5>
                         </td>
                         <td>
-                            <h5 id="tongtien">{!! $total !!}</h5>
+                            <h5 id="tongtien">{!! $total !!} VNĐ</h5>
                         </td>
                     </tr>
                     </tbody>

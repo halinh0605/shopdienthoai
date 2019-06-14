@@ -49,7 +49,7 @@ class ProductController extends Controller
         //lưu ảnh
         $image = $request->file('image');
         $filename = 'upload/' . $image->getFilename() . time() . '.' . $image->getClientOriginalExtension();
-        Storage::disk('public')->put($filename, File::get($image));
+        Storage::disk('public')->put($filename, File::get($image)); //luu vao trong o pubic
 
         $product->tensp = $request->productName;
         $product->hinhanh = $filename;
@@ -154,15 +154,12 @@ class ProductController extends Controller
     {
         $sp = order::find($mahd);
         $status = $request->status;
-//        <option value="1">Xác nhận đơn hàng</option>
-//        <option value="2">Hủy đơn hàng</option>
-//        <option value="3">Kết thúc đơn hàng</option>
         $sp->status = $status;
         if ($status == "2") {
             $order_detail = order_detail::where('mahd', $mahd)->get();
             //tra lai so luong cho san phẩm
             foreach ($order_detail as $value){
-                DB::table('sanpham')->where('masp', $value->masp)->increment('soluong', $value->soluong);
+                DB::table('sanpham')->where('idsp', $value->idsp)->increment('soluong', $value->soluong);
             }
         }
         $sp->save();
