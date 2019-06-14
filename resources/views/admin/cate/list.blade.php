@@ -7,14 +7,14 @@
 			<tr>
 				<th>Id</th>
 				<th>Tên danh mục</th>
-				{{--<th>Hành động</th>--}}
+				<th>Hành động</th>
 
 			</tr>
 		@foreach($cat as $item)
 			<tr>
 				<td>{!! $item["madm"] !!}</td>
 				<td>{!! $item["tendm"] !!}</td>
-				{{--<td><a  class="fa fa-trash fa-fw" href="{!! URL::route('admin.cate.getDelete',$item["madm"]) !!}" onclick="return xacnhanxoa('Do you want to delete?')"> </td>--}}
+				<td><a  class="fa fa-pencil fa-fw" href="{!! URL::route('admin.cate.getEdit',$item["madm"]) !!}" /> </td>
 			</tr>
 			@endforeach
 	</table>

@@ -20,7 +20,7 @@
                                 <label>Trạng thái giao hàng: </label>
                                 <select name="status_filter" id="status_filter" class="form-control input-inline" style="width: 200px">
                                     <option {{$status =='-1'?'selected':'' }} value="-1">Tất cả</option>
-                                    <option {{$status =='0'?'selected':'' }} value="0">Chờ xác nhận</option>
+                                    <option {{$status =='0'?'selected':'' }} value="0">Chờ xử lý</option>
                                     <option {{$status =='1'?'selected':'' }} value="1">Xác nhận đơn hàng</option>
                                     <option {{$status =='2'?'selected':'' }} value="2">Hủy đơn hàng</option>
                                     <option {{$status =='3'?'selected':'' }} value="3">Kết thúc đơn hàng</option>

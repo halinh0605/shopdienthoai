@@ -60,7 +60,8 @@ Route::group(['prefix' => 'admin'],function(){
         Route::get('list',['as'=>'admin.cate.list','uses'=>'CateController@getList']);
         Route::get('add',['as'=>'admin.cate.getAdd', 'uses'=>'CateController@getAdd']);
         Route::post('add',['as'=>'admin.cate.postAdd', 'uses'=>'CateController@postAdd']);
-//        Route::get('edit/{madm}',['as'=>'admin.cate.getEdit', 'uses'=>'CateController@getEdit']);
+        Route::post('edit',['as'=>'admin.cate.edit', 'uses'=>'CateController@editDanhMucAction']);
+        Route::get('edit/{madm}',['as'=>'admin.cate.getEdit', 'uses'=>'CateController@suaDanhMuc']);
 //        Route::post('edit/{madm}',['as'=>'admin.cate.postEdit', 'uses'=>'CateController@postEdit']);
 //        Route::get('delete/{madm}',['as'=>'admin.cate.getDelete', 'uses'=>'CateController@getDelete']);
     });

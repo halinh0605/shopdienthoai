@@ -31,7 +31,7 @@ class ProductController extends Controller
 //  Danh sách sản phẩm
     public function getList()
     {
-        $data = sanpham::select('idsp', 'tensp', 'hinhanh', 'soluong', 'gia', 'madm')->orderBy('updated_at', 'DESC')->get()->toArray();
+        $data = sanpham::select('idsp', 'tensp', 'hinhanh', 'soluong', 'gia', 'madm')->orderBy('idsp', 'DESC')->get()->toArray();
         return view('admin.product.list', compact('data'));
     }
 
@@ -58,6 +58,7 @@ class ProductController extends Controller
         $product->noidung = $request->description;
         $product->thongsokythuat = $request->thongso;
         $product->motangan = $request->mota;
+        $product->status = $request->status;
         $product->madm = $request->cat_id;
         $product->save();
         return redirect()->route('admin.product.list');
@@ -149,7 +150,7 @@ class ProductController extends Controller
 
     }
 
-//  TRạng thái đơn hàng
+//  cập nhập đơn hàng
     public function updateStatusOrder($mahd, Request $request)
     {
         $sp = order::find($mahd);
@@ -157,7 +158,7 @@ class ProductController extends Controller
         $sp->status = $status;
         if ($status == "2") {
             $order_detail = order_detail::where('mahd', $mahd)->get();
-            //tra lai so luong cho san phẩm
+            //Khi hủy đơn hàng phải tăng trả số lương sản phẩm
             foreach ($order_detail as $value){
                 DB::table('sanpham')->where('idsp', $value->idsp)->increment('soluong', $value->soluong);
             }

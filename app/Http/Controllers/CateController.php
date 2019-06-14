@@ -24,10 +24,15 @@ class CateController extends Controller
        return redirect()->route('admin.cate.list');
     }
 
-//Xóa danh mục
-    public function getDelete($madm) {
+    public function suaDanhMuc($madm) {
         $dm = danhmuc::find($madm);
-        $dm->delete();
+        return view('admin.cate.edit',compact('dm'));
+    }
+    public function editDanhMucAction(CateRequest $request) {
+        $dm = danhmuc::find($request->madm);
+        $dm->tendm = $request->cat_name;
+        $dm->update();
         return redirect()->route('admin.cate.list');
     }
+
 }

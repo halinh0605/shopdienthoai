@@ -17,7 +17,7 @@
                 </div>
             @endif
 
-            <form action="{!! route('admin.cate.getAdd') !!}" method="post" class="form-horizontal">
+            <form action="{!! route('admin.cate.edit') !!}" method="post" class="form-horizontal">
                 <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
 
                 <div class="row form-group">
@@ -25,25 +25,10 @@
                         <label for="hf-catName" class=" form-control-label">Tên danh mục</label>
                     </div>
                     <div class="col-12 col-md-9">
-                        <input type="text" id="cat_name" name="cat_name" placeholder="Nhập tên danh mục" class="form-control" />
+                        <input type="hidden" value="{{$dm->madm}}" id="madm" name="madm"/>
+                        <input type="text" id="cat_name" name="cat_name" value="{{$dm->tendm}}" placeholder="Nhập tên danh mục" class="form-control" />
                     </div>
                 </div>
-                {{--<div class="row form-group">--}}
-                    {{--<div class="col col-md-3">--}}
-                        {{--<label for="hf-catName" class=" form-control-label">Từ khóa</label>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-12 col-md-9">--}}
-                        {{--<input type="text" id="meta_keyword" name="meta_keyword" placeholder="Nhập từ khóa" class="form-control" />--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="row form-group">--}}
-                    {{--<div class="col col-md-3">--}}
-                        {{--<label for="hf-catName" class=" form-control-label">Mô tả</label>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-12 col-md-9">--}}
-                        {{--<input type="text" id="meta_description" name="meta_description" placeholder="Nhập mô tả" class="form-control" />--}}
-                    {{--</div>--}}
-                {{--</div>--}}
                 {{--<div class="row form-group">--}}
                     {{--<div class="col col-md-3"><label class=" form-control-label"></label></div>--}}
                     {{--<div class="col col-md-9">--}}

@@ -53,7 +53,7 @@
                             <table class="tableView">
                                 <thead>
                                 <tr role="row">
-                                    <th>STT</th>
+                                    <th>ID</th>
                                     <th>Tên sản phẩm</th>
                                     <th>Số lượng</th>
                                     <th>Đơn giá </th>

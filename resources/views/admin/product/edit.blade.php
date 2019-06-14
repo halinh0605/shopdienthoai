@@ -53,6 +53,18 @@
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-3">
+                                <label for="hf-catName" class=" form-control-label">Nhóm</label>
+                            </div>
+                            <div class="col-3 col-md-3">
+                                <select name="status" id="status">
+                                    <option value="0"></option>
+                                    <option {{$product->status =='1'?'selected':''}} value="1">Sản phẩm bán chạy</option>
+                                    <option {{$product->status =='2'?'selected':''}}  value="2">Sản phẩm mới</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3">
                                 <label for="hf-catName" class=" form-control-label">Ảnh</label>
                             </div>
                             <div class="col-12 col-md-9">

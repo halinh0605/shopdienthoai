@@ -159,7 +159,7 @@ class HomeController extends Controller
                 $chitiethd->gia = $item->price;
                 $chitiethd->tongtien = $item->price * $item->qty;
                 $chitiethd->mahd = $hoadon->mahd;
-                // khi đặt hàng phải giảm số lượng của item
+                // khi đặt hàng phải giảm số lượng của sản phẩm
                 DB::table('sanpham')->where('idsp', $item->id)->decrement('soluong', (int)$item->qty);
                 $chitiethd->save();
             }

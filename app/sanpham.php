@@ -8,7 +8,7 @@ class sanpham extends Model
 {
     public $primaryKey  = 'idsp';
     protected $table = 'sanpham';
-    protected $fillable = ['tensp','gia','motangan','madm','noidung','soluong','hinhanh','thongsokythuat'];
+    protected $fillable = ['tensp','gia','motangan','madm','noidung','soluong','hinhanh','thongsokythuat','status'];
     public function Hoadonchitiet(){
         return $this->hasMany('App\Hoadonchitiet');
     }
