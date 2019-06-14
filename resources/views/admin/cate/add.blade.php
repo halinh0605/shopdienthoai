@@ -28,22 +28,22 @@
                         <input type="text" id="cat_name" name="cat_name" placeholder="Nhập tên danh mục" class="form-control" />
                     </div>
                 </div>
-                <div class="row form-group">
-                    <div class="col col-md-3">
-                        <label for="hf-catName" class=" form-control-label">Từ khóa</label>
-                    </div>
-                    <div class="col-12 col-md-9">
-                        <input type="text" id="meta_keyword" name="meta_keyword" placeholder="Nhập từ khóa" class="form-control" />
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col col-md-3">
-                        <label for="hf-catName" class=" form-control-label">Mô tả</label>
-                    </div>
-                    <div class="col-12 col-md-9">
-                        <input type="text" id="meta_description" name="meta_description" placeholder="Nhập mô tả" class="form-control" />
-                    </div>
-                </div>
+                {{--<div class="row form-group">--}}
+                    {{--<div class="col col-md-3">--}}
+                        {{--<label for="hf-catName" class=" form-control-label">Từ khóa</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-12 col-md-9">--}}
+                        {{--<input type="text" id="meta_keyword" name="meta_keyword" placeholder="Nhập từ khóa" class="form-control" />--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="row form-group">--}}
+                    {{--<div class="col col-md-3">--}}
+                        {{--<label for="hf-catName" class=" form-control-label">Mô tả</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-12 col-md-9">--}}
+                        {{--<input type="text" id="meta_description" name="meta_description" placeholder="Nhập mô tả" class="form-control" />--}}
+                    {{--</div>--}}
+                {{--</div>--}}
                 <div class="row form-group">
                     <div class="col col-md-3"><label class=" form-control-label"></label></div>
                     <div class="col col-md-9">
@@ -60,9 +60,7 @@
                     <button type="submit" name="postAdd" class="btn btn-primary btn-sm">
                         <i class="fa fa-dot-circle-o"></i> Submit
                     </button>
-                    <button type="reset" class="btn btn-danger btn-sm">
-                        <i class="fa fa-ban"></i> Reset
-                    </button>
+
                 </div>
             </form>
         </div>

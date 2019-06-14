@@ -5,36 +5,42 @@
 <section class="banner-area">
     <div class="container-fluid">
         <div class="row align-items-center justify-content-start" >
-            <div class="col-lg-12" style="margin-top: 120px">
+            <div class="col-lg-12" style="margin: 121px 0px">
                 <div class="active-banner-slider">
                     <!-- single-slide -->
                     <div class="row single-slide align-items-center d-flex">
 
-                        <div class="col-lg-12" style="margin-bottom:-100px ">
+                        <div class="col-lg-12" >
                             <div class="banner-img" >
-                                <img class="img-fluid " style="width: 100%; height: 100%" src="karma/img/banner/Banner2.png"  alt="">
+                                <img class="img-fluid " src="karma/img/banner/Banner2.png"  alt="">
                             </div>
                         </div>
                     </div>
+                    <!-- single-slide -->
                     <div class="row single-slide align-items-center d-flex">
-                        <div class="col-lg-12" style="margin-bottom:-100px ">
-                            <div class="banner-img">
-                                <img class="img-fluid" src="karma/img/banner/Banner1.png" alt="">
+
+                        <div class="col-lg-12" >
+                            <div class="banner-img" >
+                                <img class="img-fluid " src="karma/img/banner/Banner1.png"  alt="">
                             </div>
                         </div>
                     </div>
+                    <!-- single-slide -->
                     <div class="row single-slide align-items-center d-flex">
-                        <div class="col-lg-12">
-                            <div class="banner-img">
-                                <img class="img-fluid" src="karma/img/banner/Banner3.png" alt="">
+
+                        <div class="col-lg-12" >
+                            <div class="banner-img" >
+                                <img class="img-fluid " src="karma/img/banner/Banner3.jpg"  alt="">
                             </div>
                         </div>
                     </div>
 
+                    <!-- single-slide -->
                     <div class="row single-slide align-items-center d-flex">
-                        <div class="col-lg-12">
-                            <div class="banner-img">
-                                <img class="img-fluid" src="karma/img/banner/Banner4.png" alt="">
+
+                        <div class="col-lg-12" >
+                            <div class="banner-img" >
+                                <img class="img-fluid " src="karma/img/banner/Banner4.jpg"  alt="">
                             </div>
                         </div>
                     </div>
@@ -52,7 +58,7 @@
 
 <!-- start features Area -->
 <section class="features-area section_gap">
-    <div class="container">
+    <div class="container main2">
         <div class="row features-inner">
             <!-- single features -->
             <div class="col-lg-3 col-md-6 col-sm-6">
@@ -113,12 +119,12 @@
                 <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
             <div class="row">
                 <!-- single product -->
-                @foreach($product as $item)
+                @foreach($product1 as $item)
                     <div class="col-lg-3 col-md-6">
                         <div class="single-product">
                             <a href="/chitietsanpham/{!! $item->idsp !!}"><img class="img-fluid" src="{!! $item->hinhanh !!}" alt=""></a>
                             <div class="product-details">
-                                <h6>{!! $item->tensp !!}</h6>
+                                <a href="/chitietsanpham/{!! $item->idsp !!}"><h6>{!! $item->tensp !!}</h6></a>
                                 <div class="price">
                                     <h6>{!! number_format($item->gia,0,",",".") !!} VNĐ</h6>
                                     {{--<h6 class="l-through">$210.00</h6>--}}
@@ -153,7 +159,7 @@
             </div>
             <div class="row">
                 <!-- single product -->
-                @foreach($product as $item)
+                @foreach($product2 as $item)
                     <div class="col-lg-3 col-md-6">
                         <div class="single-product">
                             <a href="/chitietsanpham/{!! $item->idsp !!}"><img class="img-fluid"  src="{!! $item->hinhanh !!}" alt=""></a>

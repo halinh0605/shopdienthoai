@@ -15,7 +15,7 @@
                         <div class="col-md-12">
                             <div class="container123  col-md-6"   style="">
                                 <h4></h4>
-                                <table class="table table-bordered">
+                                <table class="tableView">
                                     <thead>
                                     <tr>
                                         <th class="col-md-4">Thông tin khách hàng</th>
@@ -50,14 +50,14 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <table id="myTable" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+                            <table class="tableView">
                                 <thead>
                                 <tr role="row">
-                                    <th >STT</th>
-                                    <th class="sorting_asc col-md-4">Tên sản phẩm</th>
-                                    <th class="sorting col-md-2">Số lượng</th>
-                                    <th class="sorting col-md-2">Đơn giá </th>
-                                    <th class="sorting col-md-2">Thành tiền</th>
+                                    <th>STT</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Đơn giá </th>
+                                    <th>Thành tiền</th>
                                 </thead>
                                 <tbody>
                                     @foreach($data as $item)

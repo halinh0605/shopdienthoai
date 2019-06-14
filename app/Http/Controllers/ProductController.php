@@ -28,12 +28,14 @@ class ProductController extends Controller
         return view('admin.home');
     }
 
+//  Danh sách sản phẩm
     public function getList()
     {
         $data = sanpham::select('idsp', 'tensp', 'hinhanh', 'soluong', 'gia', 'madm')->orderBy('updated_at', 'DESC')->get()->toArray();
         return view('admin.product.list', compact('data'));
     }
 
+//  Thêm mới sản phẩm
     public function getAdd()
     {
         $cates = DB::select('select * from danhmuc');
@@ -44,11 +46,10 @@ class ProductController extends Controller
     {
         $product = new sanpham;
 
-        //luu anh
+        //lưu ảnh
         $image = $request->file('image');
         $filename = 'upload/' . $image->getFilename() . time() . '.' . $image->getClientOriginalExtension();
         Storage::disk('public')->put($filename, File::get($image));
-
 
         $product->tensp = $request->productName;
         $product->hinhanh = $filename;
@@ -60,10 +61,9 @@ class ProductController extends Controller
         $product->madm = $request->cat_id;
         $product->save();
         return redirect()->route('admin.product.list');
-
     }
 
-
+//  Xóa sản phẩm
     public function getDelete($idsp)
     {
         $sp = sanpham::find($idsp);
@@ -74,6 +74,7 @@ class ProductController extends Controller
         return redirect()->route('admin.product.list');
     }
 
+//  Sửa sản phẩm
     public function getEdit($idsp)
     {
         $cates = danhmuc::all();
@@ -96,6 +97,7 @@ class ProductController extends Controller
         return redirect()->route('admin.product.list');
     }
 
+//  Thêm ảnh sản phẩm
     public function getAddAnh($idsp)
     {
         $product = sanpham::find($idsp);
@@ -109,16 +111,15 @@ class ProductController extends Controller
         $filename = 'upload/' . $image->getFilename() . time() . '.' . $image->getClientOriginalExtension();
         Storage::disk('public')->put($filename, File::get($image));
 
-        $product = sanpham::find($idsp);
+//        $product = sanpham::find($idsp);
         $product = new anhsanpham;
-
         $product->idsp = $request->idsp;
         $product->images = $filename;
         $product->save();
-
         return redirect()->route('admin.product.list');
     }
 
+//  Danh sách hóa đơn
     public function listOrder()
     {
         $status = Input::get("status");
@@ -130,24 +131,25 @@ class ProductController extends Controller
         return view('admin.order.order', compact('data','status'));
     }
 
+//  Hóa đơn chi tiết
     public function listOrder_detail($mahd)
     {
-
-//        $data = order_detail::select('mahd', 'ten', 'email', 'dienthoai', 'diachi', 'donhang')->orderBy('updated_at', 'DESC')->get()->toArray();
         $data1 = order::find($mahd);
 //        dd($data);
         $data = order_detail::where('mahd', $mahd)->select('id', 'mahd', 'tensp', 'soluong', 'gia', 'tongtien')->orderBy('updated_at', 'DESC')->get()->toArray();
         return view('admin.order.order_detail', compact('data1', 'data'));
     }
 
-    public function DeleteOrder_detail($mahd)
+//  Xóa hóa đơn
+    public function DeleteOrder($mahd)
     {
-        $sp = order::find($mahd);
-        $sp->delete();
-        return view('admin.order.order_detail');
+        $sp1 = order::find($mahd);
+        $sp1->delete();
+        return redirect()->route('admin.order.getDelete');
 
     }
 
+//  TRạng thái đơn hàng
     public function updateStatusOrder($mahd, Request $request)
     {
         $sp = order::find($mahd);

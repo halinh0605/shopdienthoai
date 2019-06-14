@@ -30,17 +30,17 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <table id="myTable" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+                            <table class="tableView">
                                 <thead>
                                 <tr role="row">
                                     <th >ID</th>
-                                    <th class="sorting_asc col-md-2" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="">Tên người order</th>
-                                    <th class="sorting col-md-2" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">Địa chỉ</th>
-                                    <th class="sorting col-md-1" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">Ngày đặt hàng</th>
+                                    <th>Tên người order</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Ngày đặt hàng</th>
                                     <th>Email</th>
                                     <th>Trạng thái</th>
-                                    <th class="sorting col-md-1" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">Action</th>
-                                    <th class="sorting col-md-2" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">Xóa</th></tr>
+                                    <th>Action</th>
+                                    {{--<th class="sorting col-md-2" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="">Xóa</th></tr>--}}
                                 </thead>
                                 <tbody>
                                 @foreach($data as $item)
@@ -63,7 +63,7 @@
 
                                         <td><a href="{!! url('/admin/order/listOrder_detail/'.$item["mahd"]) !!}">Detail</a></td>
 
-                                        <td><a href="{!! url('/admin/order/delete/'.$item["mahd"]) !!}"> Delete </a></td>
+                                        {{--<td><a href="{!! url('/admin/order/delete/'.$item["mahd"]) !!}"> Delete </a></td>--}}
 
                                     </tr>
                                 @endforeach

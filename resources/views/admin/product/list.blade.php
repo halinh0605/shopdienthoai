@@ -25,8 +25,8 @@
                         {!! $cat->tendm !!}
                         @endif
                 </td>
-                <td><a  class="fa fa-trash fa-fw" href="{!! URL::route('admin.product.getDelete',$item['idsp']) !!}" onclick="return xacnhanxoa('Do you want to delete?')"> <a class="fa fa-pencil fa-fw" href="{!! url::route('admin.product.getEdit',$item["idsp"]) !!}"> </td>
-                <td><a href="{!! url::route('admin.product.getAddAnh',$item["idsp"]) !!}"> Thêm ảnh</td>
+                <td><a class="fa fa-pencil fa-fw" href="{!! url('/admin/product/edit/'.$item["idsp"]) !!}"> </td>
+                <td><a href="{!! url('/admin/product/AddAnh/'.$item["idsp"]) !!}"> Thêm ảnh</td>
             </tr>
             @endforeach
         </table>
